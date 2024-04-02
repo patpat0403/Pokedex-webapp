@@ -1,14 +1,25 @@
 import React from 'react'
 import usePokemons from '../hooks/usePokemons'
 import PokemonList from '../components/PokemonList';
-import { Container } from '@mui/material';
+import { Box, Button, Container } from '@mui/material';
 
 const Home = () => {
   
-    const {pokemons}=usePokemons();
+    const {pokemons,hasMorePokemon,fetchNextPage}=usePokemons();
   
     return (
-    <Container><PokemonList pokemons={pokemons}></PokemonList></Container>
+    <Container>
+        
+        <PokemonList pokemons={pokemons}></PokemonList>
+        {hasMorePokemon ? (
+         <Box textAlign='center'>
+            <Button variant='contained' onClick={fetchNextPage}>More pokemon</Button>
+        
+         </Box>
+        ):null}
+    
+    </Container>
+    
     )
   
 }

@@ -1,9 +1,9 @@
 import React from 'react'
-import { IndexedPokemon } from '../interfaces/pokemon.interface';
+import { IndexedPokemon, ListPokemon } from '../interfaces/pokemon.interface';
 import PokemonCard from './PokemonCard';
 import { Grid } from '@mui/material';
 interface PokemonListProps{
-    pokemons: IndexedPokemon[];
+    pokemons: ListPokemon[];
 }
 
 const PokemonList = ({pokemons}: PokemonListProps) => {
